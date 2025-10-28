@@ -1,11 +1,18 @@
-import { Text, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import TaskList from "@/components/taskList";
+import Button from '@/components/Button';
 
 
 export default function Index() {
     return (
         <SafeAreaView style={styles.container}>
-            <Text> Hello </Text>
+            <View style={styles.listContainer}>
+                <TaskList />
+            </View>
+            <View style={styles.footerContainer}>
+                <Button />
+            </View>
         </SafeAreaView >
     );
 }
@@ -13,8 +20,14 @@ export default function Index() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffffff',
     },
+    listContainer: {
+        flex: 1,
+    },
+    footerContainer: {
+        flex: 1 / 12,
+        alignItems: 'center',
+    }
 });
